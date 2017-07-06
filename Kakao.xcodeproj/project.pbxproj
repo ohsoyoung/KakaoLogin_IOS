@@ -12,9 +12,11 @@
 		6E21D29D1F0B7095005D1C6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E21D29B1F0B7095005D1C6D /* Main.storyboard */; };
 		6E21D29F1F0B7095005D1C6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E21D29E1F0B7095005D1C6D /* Assets.xcassets */; };
 		6E21D2A21F0B7095005D1C6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E21D2A01F0B7095005D1C6D /* LaunchScreen.storyboard */; };
+		6E21D2AC1F0B71B2005D1C6D /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E21D2AB1F0B71B2005D1C6D /* KakaoOpenSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E1735D51F0DC600005159CD /* Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging_Header.h; sourceTree = "<group>"; };
 		6E21D2941F0B7095005D1C6D /* Kakao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kakao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E21D2971F0B7095005D1C6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E21D2991F0B7095005D1C6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,7 @@
 		6E21D29E1F0B7095005D1C6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E21D2A11F0B7095005D1C6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E21D2A31F0B7095005D1C6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E21D2AB1F0B71B2005D1C6D /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E21D2AC1F0B71B2005D1C6D /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 			children = (
 				6E21D2961F0B7095005D1C6D /* Kakao */,
 				6E21D2951F0B7095005D1C6D /* Products */,
+				6E21D2AB1F0B71B2005D1C6D /* KakaoOpenSDK.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +61,7 @@
 			children = (
 				6E21D2971F0B7095005D1C6D /* AppDelegate.swift */,
 				6E21D2991F0B7095005D1C6D /* ViewController.swift */,
+				6E1735D51F0DC600005159CD /* Bridging_Header.h */,
 				6E21D29B1F0B7095005D1C6D /* Main.storyboard */,
 				6E21D29E1F0B7095005D1C6D /* Assets.xcassets */,
 				6E21D2A01F0B7095005D1C6D /* LaunchScreen.storyboard */,
@@ -258,10 +264,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Kakao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soyoung.Kakao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Kakao/Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -270,10 +282,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Kakao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soyoung.Kakao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Kakao/Bridging_Header.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -297,6 +315,7 @@
 				6E21D2A81F0B7095005D1C6D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
